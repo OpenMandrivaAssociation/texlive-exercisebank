@@ -1,6 +1,6 @@
 Name:		texlive-exercisebank
 Version:	50448
-Release:	1
+Release:	2
 Summary:	Creating and managing exercises, and reusing them as composed sets
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/exercisebank
