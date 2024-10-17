@@ -3,7 +3,7 @@ Version:	50448
 Release:	2
 Summary:	Creating and managing exercises, and reusing them as composed sets
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/exercisebank
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/exercisebank
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exercisebank.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exercisebank.doc.r%{version}.tar.xz
