@@ -1,38 +1,25 @@
-Name:		texlive-exercisebank
-Version:	50448
-Release:	2
+%global tl_name exercisebank
+%global tl_revision 50448
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.3.0
+Release:	%{tl_revision}.1
 Summary:	Creating and managing exercises, and reusing them as composed sets
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/exercisebank
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exercisebank.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exercisebank.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/exercisebank.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/exercisebank.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package makes it easier to maintain and edit your exercise
-sets. Exercises are saved as separate files containing part
-problems. These files can be used to make sets, and you can
-cherry-pick or exclude certain part problems as you see fit.
+This package makes it easier to maintain and edit your exercise sets.
+Exercises are saved as separate files containing part problems. These
+files can be used to make sets, and you can cherry-pick or exclude
+certain part problems as you see fit.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/exercisebank
-%doc %{_texmfdistdir}/doc/latex/exercisebank
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
